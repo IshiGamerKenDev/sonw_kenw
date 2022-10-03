@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonw</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="shortcute icon" type="x-icon" href="icon.png">
+  </head>
+  <body>
+
+    <header>
+      <a href="#" class="brand">Sonw</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Explore</a>
+          <a href="#">Gallery</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <video autoplay muted loop 
+         class="video-slide active" source src="1.mp4" type="video/mp4">
+      </video>
+      
+      <video autoplay muted loop
+         class="video-slide" source src="2.mp4" type="video/mp4">
+      </video>
+      
+      <video autoplay muted loop
+         class="video-slide" source src="3.mp4" type="video/mp4">
+      </video>
+      
+      <video autoplay muted loop
+         class="video-slide" source src="4.mp4" type="video/mp4">
+      </video>
+      
+      <video autoplay muted loop
+         class="video-slide" source src="5.mp4" type="video/mp4">
+      </video>
+
+      <div class="content active" id="content active">
+        <h1>Hello, welcome to<br><span>Sonw's Website</span></h1>
+        <p>Hello! go next?</p>
+        <a href="#content_1">Read More</a>
+      </div>
+      
+      <div class="content" id="content_1">
+        <h1>About Sonw<br><span>Who am i?</span></h1>
+        <p>Please introduce my name as Tran Minh Son and I am a young child. I was born on 07/25(i wouldn't say my year of birth :>). And I'm not too ignorant or too talented, just a normal person like everyone else!!! Am I friendly? and the answer is yes (or no because I'm also annoyed and annoyed sometimes).</p>
+        <a href="#page_2">Read More</a>
+      </div>
+      
+     <div class="content" id="page_2">
+        <h1>Wanna<br><span>be my friends?</span></h1>
+        <p>If you want to know more about me, or talk to me and be friends with me.</p>
+        <a href="#page_3">Read More</a>
+      </div>
+      
+     <div class="content" id="page_3">
+        <h1>Links.<br><span>Clicks</span></h1>
+        <p>Also you can check out the links I put it here:
+          <br><br>
+           <a href="https://www.facebook.com/MinhSon2507">
+             Facebook
+           </a><br><br><br>
+           <a href="https://www.youtube.com/c/IshiGamerKen">
+             Youtube
+        </p>
+        
+        <a href="#page_4">Read More</a>
+      </div>
+      <div class="content" id="page_4">
+        <h1>Still in<br><span>Working</span></h1>
+        <p>I'll update more in the future!!!</p>
+        <a href="END">END.</a>
+      </div>
+     
+      <div class="media-icons">
+        <a href="https://www.facebook.com/MinhSonw2507"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/c/IshiGamerKen"><i class="fab fa-youtube"></i></a>
+        <a href="Still not have yet"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //Javacript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+  </body>
+</html>
